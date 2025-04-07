@@ -1,5 +1,5 @@
-import { useMemo } from 'react'
-import { Sort } from '../../__generated__/graphql'
+import { useMemo } from "react";
+import { Sort } from "../../__generated__/graphql";
 import {
   Select,
   SelectContent,
@@ -7,27 +7,33 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "../Select"
+} from "../Select";
 
-export type SortValue = Record<string, Sort | undefined>
+export type SortValue = Record<string, Sort | undefined>;
 
 export type SortSelectProps = {
-  onValueChange: (value: SortValue) => void
-  value: SortValue
-}
+  onValueChange: (value: SortValue) => void;
+  value: SortValue;
+};
 
 export function SortSelect(props: SortSelectProps) {
-
   const value = useMemo(() => {
-    return Object.keys(props.value).map((key) => `${key}:${props.value[key]}`)[0] ?? ''
-  }
-  , [props.value])
+    return (
+      Object.keys(props.value).map((key) => `${key}:${props.value[key]}`)[0] ??
+      ""
+    );
+  }, [props.value]);
 
   const onValueChange = (value: string) => {
     props.onValueChange({
-      name: value === 'name:asc' ? Sort.Asc : value === 'name:desc' ? Sort.Desc : undefined
-    })
-  }
+      name:
+        value === "name:asc"
+          ? Sort.Asc
+          : value === "name:desc"
+            ? Sort.Desc
+            : undefined,
+    });
+  };
 
   return (
     <Select onValueChange={onValueChange} value={value}>
@@ -42,5 +48,5 @@ export function SortSelect(props: SortSelectProps) {
         </SelectGroup>
       </SelectContent>
     </Select>
-  )
+  );
 }

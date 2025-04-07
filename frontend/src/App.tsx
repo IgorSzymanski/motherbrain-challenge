@@ -1,4 +1,4 @@
-import { FundingRoundChart } from './components/FundingRoundChart'
+import { FundingRoundChart } from "./components/FundingRoundChart";
 
 function App() {
   return (

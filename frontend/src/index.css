@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 @import "tailwindcss";
 
 @plugin 'tailwindcss-animate';
@@ -66,56 +66,99 @@ body {
 @keyframes mulShdSpin {
   0%,
   100% {
-    box-shadow: 0 -3em 0 0.2em, 
-    2em -2em 0 0em, 3em 0 0 -1em, 
-    2em 2em 0 -1em, 0 3em 0 -1em, 
-    -2em 2em 0 -1em, -3em 0 0 -1em, 
-    -2em -2em 0 0;
+    box-shadow:
+      0 -3em 0 0.2em,
+      2em -2em 0 0em,
+      3em 0 0 -1em,
+      2em 2em 0 -1em,
+      0 3em 0 -1em,
+      -2em 2em 0 -1em,
+      -3em 0 0 -1em,
+      -2em -2em 0 0;
     color: theme(--color-teal-500);
   }
   12.5% {
-    box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 
-    3em 0 0 0, 2em 2em 0 -1em, 0 3em 0 -1em, 
-    -2em 2em 0 -1em, -3em 0 0 -1em, 
-    -2em -2em 0 -1em;
+    box-shadow:
+      0 -3em 0 0,
+      2em -2em 0 0.2em,
+      3em 0 0 0,
+      2em 2em 0 -1em,
+      0 3em 0 -1em,
+      -2em 2em 0 -1em,
+      -3em 0 0 -1em,
+      -2em -2em 0 -1em;
     color: theme(--color-blue-600);
   }
   25% {
-    box-shadow: 0 -3em 0 -0.5em, 
-    2em -2em 0 0, 3em 0 0 0.2em, 
-    2em 2em 0 0, 0 3em 0 -1em, 
-    -2em 2em 0 -1em, -3em 0 0 -1em, 
-    -2em -2em 0 -1em;
+    box-shadow:
+      0 -3em 0 -0.5em,
+      2em -2em 0 0,
+      3em 0 0 0.2em,
+      2em 2em 0 0,
+      0 3em 0 -1em,
+      -2em 2em 0 -1em,
+      -3em 0 0 -1em,
+      -2em -2em 0 -1em;
     color: theme(--color-violet-600);
   }
   37.5% {
-    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em,
-     3em 0em 0 0, 2em 2em 0 0.2em, 0 3em 0 0em, 
-     -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
+    box-shadow:
+      0 -3em 0 -1em,
+      2em -2em 0 -1em,
+      3em 0em 0 0,
+      2em 2em 0 0.2em,
+      0 3em 0 0em,
+      -2em 2em 0 -1em,
+      -3em 0em 0 -1em,
+      -2em -2em 0 -1em;
     color: theme(--color-fuchsia-600);
   }
   50% {
-    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em,
-     3em 0 0 -1em, 2em 2em 0 0em, 0 3em 0 0.2em, 
-     -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
+    box-shadow:
+      0 -3em 0 -1em,
+      2em -2em 0 -1em,
+      3em 0 0 -1em,
+      2em 2em 0 0em,
+      0 3em 0 0.2em,
+      -2em 2em 0 0,
+      -3em 0em 0 -1em,
+      -2em -2em 0 -1em;
     color: theme(--color-violet-600);
   }
   62.5% {
-    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em,
-     3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 0, 
-     -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
+    box-shadow:
+      0 -3em 0 -1em,
+      2em -2em 0 -1em,
+      3em 0 0 -1em,
+      2em 2em 0 -1em,
+      0 3em 0 0,
+      -2em 2em 0 0.2em,
+      -3em 0 0 0,
+      -2em -2em 0 -1em;
     color: theme(--color-blue-500);
   }
   75% {
-    box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 
-    3em 0em 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, 
-    -2em 2em 0 0, -3em 0em 0 0.2em, -2em -2em 0 0;
+    box-shadow:
+      0em -3em 0 -1em,
+      2em -2em 0 -1em,
+      3em 0em 0 -1em,
+      2em 2em 0 -1em,
+      0 3em 0 -1em,
+      -2em 2em 0 0,
+      -3em 0em 0 0.2em,
+      -2em -2em 0 0;
     color: theme(--color-sky-500);
   }
   87.5% {
-    box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 
-    3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, 
-    -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
+    box-shadow:
+      0em -3em 0 0,
+      2em -2em 0 -1em,
+      3em 0 0 -1em,
+      2em 2em 0 -1em,
+      0 3em 0 -1em,
+      -2em 2em 0 0,
+      -3em 0em 0 0,
+      -2em -2em 0 0.2em;
     color: theme(--color-cyan-500);
   }
 }
@@ -135,7 +178,7 @@ body {
     scale: 1;
   }
 }
-  
+
 @utility timeline-view {
   animation-timeline: view();
 }
