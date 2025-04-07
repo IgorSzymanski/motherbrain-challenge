@@ -22,8 +22,6 @@ export function FundingRoundChart() {
     totalCount,
   } = useChart();
 
-  if (error) return <p>Error!</p>;
-
   return (
     <div className={"font-display p-5 flex flex-col gap-5"}>
       <Title className={"text-2xl"}>Funding Round Chart</Title>
@@ -38,7 +36,7 @@ export function FundingRoundChart() {
         />
         <SortSelect value={sort} onValueChange={setSort} />
       </Box>
-      <Loader isLoading={loading} className={"flex flex-col gap-5"}>
+      <Loader isLoading={loading} isError={error} className={"flex flex-col gap-5"}>
         <Pagination
           totalCount={totalCount}
           offset={offset}
