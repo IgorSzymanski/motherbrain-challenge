@@ -2,7 +2,7 @@ import { FundingRoundChart } from "./components/FundingRoundChart";
 
 function App() {
   return (
-    <div style={{ maxWidth: 720, margin: "0 auto", fontFamily: "sans-serif" }}>
+    <div style={{ maxWidth: 720, margin: "0 auto" }}>
       {/* <h1>Hello, dear future Motherbrain developer! 👋</h1>
 
       <p>

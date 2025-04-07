@@ -38,7 +38,7 @@ export const Row = ({
           {label}
         </span>
         <span className={"text-sm justify-self-end-safe"}>
-          Total: {formatEuroMoney(sum(...values.map((pill) => pill.value)))}
+          <span className={"text-xs text-gray-600"}>Total:</span> {formatEuroMoney(sum(...values.map((pill) => pill.value)))}
         </span>
       </div>
       <div className={"flex-1 flex gap-1"}>
