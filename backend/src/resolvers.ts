@@ -1,34 +1,34 @@
-import { PrismaClient } from '@prisma/client';
+import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
-type Sort = 'asc' | 'desc';
+type Sort = "asc" | "desc";
 
 type FundingRoundOrderBy = {
   name?: Sort;
   amount?: Sort;
   createdAt?: Sort;
-}
+};
 
 type OrganizationOrderBy = {
   name?: Sort;
   description?: Sort;
-}
+};
 
 type FundingRoundArguments = {
   offset?: number;
   limit?: number;
   orderBy?: FundingRoundOrderBy & {
-    organization?: OrganizationOrderBy
-  }
-}
+    organization?: OrganizationOrderBy;
+  };
+};
 
 type OrganizationArguments = {
   offset?: number;
   limit?: number;
-  orderBy?: OrganizationOrderBy
-  filter?: string
-}
+  orderBy?: OrganizationOrderBy;
+  filter?: string;
+};
 
 export const resolvers = {
   FundingRound: {
@@ -40,10 +40,13 @@ export const resolvers = {
       });
 
       return organization;
-    }
+    },
   },
   Organization: {
-    fundingRounds: async (parent: { id: string }, { orderBy }: FundingRoundArguments) => {
+    fundingRounds: async (
+      parent: { id: string },
+      { orderBy }: FundingRoundArguments,
+    ) => {
       const fundingRounds = await prisma.fundingRound.findMany({
         where: {
           organizationId: parent.id,
@@ -52,10 +55,13 @@ export const resolvers = {
       });
 
       return fundingRounds;
-    }
+    },
   },
   Query: {
-    fundingRounds: async (_parent: unknown, { offset = 0, limit = 20, orderBy }: FundingRoundArguments) => {
+    fundingRounds: async (
+      _parent: unknown,
+      { offset = 0, limit = 20, orderBy }: FundingRoundArguments,
+    ) => {
       const fundingRounds = await prisma.fundingRound.findMany({
         take: limit,
         skip: offset,
@@ -64,8 +70,10 @@ export const resolvers = {
 
       return fundingRounds;
     },
-    organizations: async (_parent: unknown, { offset = 0, limit = 20, orderBy, filter }: OrganizationArguments) => {
-
+    organizations: async (
+      _parent: unknown,
+      { offset = 0, limit = 20, orderBy, filter }: OrganizationArguments,
+    ) => {
       const where = filter
         ? {
             OR: [
@@ -78,7 +86,7 @@ export const resolvers = {
                   },
                 },
               },
-            ]
+            ],
           }
         : undefined;
 
@@ -94,7 +102,7 @@ export const resolvers = {
         totalCount: await prisma.organization.count({
           where,
         }),
-      }
-    }
+      };
+    },
   },
 };

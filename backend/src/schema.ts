@@ -1,7 +1,7 @@
-import { gql } from 'graphql-tag';
+import { gql } from "graphql-tag";
 
 export const typeDefs = gql`
-type FundingRound {
+  type FundingRound {
     id: String!
     name: String!
     amount: Int!
@@ -10,37 +10,46 @@ type FundingRound {
     organization: Organization!
   }
 
-type Organization {
+  type Organization {
     id: String!
     name: String!
     description: String!
     fundingRounds(orderBy: FundingRoundsOrderByInput): [FundingRound!]!
   }
 
-input OrganizationOrderByInput {
-  name: Sort
-  description: Sort
-}
+  input OrganizationOrderByInput {
+    name: Sort
+    description: Sort
+  }
 
-input FundingRoundsOrderByInput {
-  name: Sort
-  amount: Sort
-  createdAt: Sort
-  organization: OrganizationOrderByInput
-}
+  input FundingRoundsOrderByInput {
+    name: Sort
+    amount: Sort
+    createdAt: Sort
+    organization: OrganizationOrderByInput
+  }
 
-enum Sort {
-  asc
-  desc
-}
+  enum Sort {
+    asc
+    desc
+  }
 
-type PaginatedOrganizations {
-  items: [Organization!]!
-  totalCount: Int!
-}
+  type PaginatedOrganizations {
+    items: [Organization!]!
+    totalCount: Int!
+  }
 
   type Query {
-    fundingRounds(offset: Int, limit: Int, orderBy: FundingRoundsOrderByInput): [FundingRound!]
-    organizations(offset: Int, limit: Int, orderBy: OrganizationOrderByInput, filter: String): PaginatedOrganizations!
+    fundingRounds(
+      offset: Int
+      limit: Int
+      orderBy: FundingRoundsOrderByInput
+    ): [FundingRound!]
+    organizations(
+      offset: Int
+      limit: Int
+      orderBy: OrganizationOrderByInput
+      filter: String
+    ): PaginatedOrganizations!
   }
 `;
