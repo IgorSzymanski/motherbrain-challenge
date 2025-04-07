@@ -1,9 +1,9 @@
-import FundingRoundTable from "./FundingRoundTable";
+import { FundingRoundChart } from './components/FundingRoundChart'
 
 function App() {
   return (
     <div style={{ maxWidth: 720, margin: "0 auto", fontFamily: "sans-serif" }}>
-      <h1>Hello, dear future Motherbrain developer! 👋</h1>
+      {/* <h1>Hello, dear future Motherbrain developer! 👋</h1>
 
       <p>
         This is a code test that is meant to test your creativity and problem
@@ -18,13 +18,13 @@ function App() {
 
       <h2>The Challenge</h2>
 
-      <p>
+      <div>
         The database for this assignment is an SQLite db that you can find in:
         <pre>backend/prisma/dev.db</pre>A tip is to run{" "}
         <code>npx prisma studio</code> in the <code>backend</code> directory and
         then you will be able to access the database via{" "}
         <a href="http://localhost:5555">http://localhost:5555</a>.
-      </p>
+      </div>
 
       <p>The database contains:</p>
 
@@ -59,8 +59,8 @@ function App() {
       <p>
         Here is a simple table version of some funding round data. How will <em>you</em> make
         it more fun?
-      </p>
-      <FundingRoundTable />
+      </p> */}
+      <FundingRoundChart />
     </div>
   );
 }

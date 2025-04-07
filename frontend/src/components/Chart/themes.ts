@@ -1,0 +1,18 @@
+export const themes: string[] = [
+  'theme-teal-500 hover:theme-teal-700',
+  'theme-cyan-500 hover:theme-cyan-700',
+  'theme-sky-500 hover:theme-sky-700',
+  'theme-blue-500 hover:theme-blue-700',
+  'theme-indigo-500 hover:theme-indigo-700',
+  'theme-violet-500 hover:theme-violet-700',
+  'theme-purple-500 hover:theme-purple-700',
+  'theme-fuchsia-500 hover:theme-fuchsia-700',
+  'theme-pink-500 hover:theme-pink-700',
+  'theme-fuchsia-500 hover:theme-fuchsia-700',
+  'theme-purple-500 hover:theme-purple-700',
+  'theme-violet-500 hover:theme-violet-700',
+  'theme-indigo-500 hover:theme-indigo-700',
+  'theme-blue-500 hover:theme-blue-700',
+  'theme-sky-500 hover:theme-sky-700',
+  'theme-cyan-500 hover:theme-cyan-700',
+]

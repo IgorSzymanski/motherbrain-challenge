@@ -1,4 +1,4 @@
-import { gql } from "apollo-server-express";
+import { gql } from 'graphql-tag';
 
 export const typeDefs = gql`
 type FundingRound {
@@ -7,9 +7,40 @@ type FundingRound {
     amount: Int!
     createdAt: String!
     organizationId: String!
+    organization: Organization!
   }
 
+type Organization {
+    id: String!
+    name: String!
+    description: String!
+    fundingRounds(orderBy: FundingRoundsOrderByInput): [FundingRound!]!
+  }
+
+input OrganizationOrderByInput {
+  name: Sort
+  description: Sort
+}
+
+input FundingRoundsOrderByInput {
+  name: Sort
+  amount: Sort
+  createdAt: Sort
+  organization: OrganizationOrderByInput
+}
+
+enum Sort {
+  asc
+  desc
+}
+
+type PaginatedOrganizations {
+  items: [Organization!]!
+  totalCount: Int!
+}
+
   type Query {
-    fundingRounds: [FundingRound!]
+    fundingRounds(offset: Int, limit: Int, orderBy: FundingRoundsOrderByInput): [FundingRound!]
+    organizations(offset: Int, limit: Int, orderBy: OrganizationOrderByInput, filter: String): PaginatedOrganizations!
   }
 `;

@@ -7,13 +7,14 @@ generator client {
 
 datasource db {
   provider = "sqlite"
-  url      = env("DATABASE_URL")
+  url      = "file:./dev.db"
 }
 
 model Organization {
   id          String @id @default(uuid())
   name        String
   description String
+  fundingRounds FundingRound[]
 
   @@map("organization")
 }
@@ -23,6 +24,7 @@ model FundingRound {
   name           String
   amount         Int
   createdAt      DateTime
+  organization  Organization @relation(fields: [organizationId], references: [id])
   organizationId String
 
   @@map("funding_round")
